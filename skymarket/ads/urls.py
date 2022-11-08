@@ -3,7 +3,7 @@ from django.urls import include, path
 # TODO настройка роутов для модели
 from rest_framework.routers import SimpleRouter
 
-from skymarket.ads.views import CommentViewSet, AdViewSet
+from ads.views import AdViewSet, CommentViewSet
 
 router_ad = SimpleRouter()
 router_ad.register("ads", AdViewSet)

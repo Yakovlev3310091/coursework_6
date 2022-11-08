@@ -4,10 +4,10 @@ from rest_framework import pagination, viewsets
 from rest_framework.decorators import action
 from rest_framework.permissions import AllowAny, IsAuthenticated
 
-from skymarket.ads.filters import AdFilter
-from skymarket.ads.models import Ad, Comment
-from skymarket.ads.permissions import IsOwner, IsAdmin
-from skymarket.ads.serializers import AdListSerializer, AdSerializer, CommentSerializer
+from ads.filters import AdFilter
+from ads.models import Ad, Comment
+from ads.permissions import IsOwner, IsAdmin
+from ads.serializers import AdListSerializer, AdSerializer, CommentSerializer
 
 User = get_user_model()
 
