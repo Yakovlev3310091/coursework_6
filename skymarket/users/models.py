@@ -8,15 +8,15 @@ from django.utils.translation import gettext_lazy as _
 from skymarket.users.managers import UserManager
 
 
-class UserRoles:
+class UserRoles(models.TextChoices):
     # TODO закончите enum-класс для пользователя
     USER = "user"
     ADMIN = "admin"
 
-    choices = (
-        (USER, "Пользователь"),
-        (ADMIN, "Админ")
-    )
+    # choices = (
+    #     (USER, "Пользователь"),
+    #     (ADMIN, "Админ")
+    # )
 
 
 class User(AbstractBaseUser):
@@ -26,9 +26,9 @@ class User(AbstractBaseUser):
     last_name = models.CharField(max_length=64, validators=[MinLengthValidator(1)], verbose_name="Фамилия")
     phone = PhoneNumberField(max_length=128, validators=[MinLengthValidator(1)], verbose_name="Номер телефона")
     email = models.EmailField(max_length=254, validators=[MinLengthValidator(1)], unique=True)
-    role = models.CharField(max_length=6, choices=UserRoles.choices, default="user", verbose_name="Роль")
+    role = models.CharField(max_length=6, choices=UserRoles.choices, default=UserRoles.USER, verbose_name="Роль")
     image = models.ImageField(verbose_name="Картинка", null=True, blank=True)
-    is_active = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['first_name', 'last_name', 'phone']
