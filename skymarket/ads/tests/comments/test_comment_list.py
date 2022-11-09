@@ -1,7 +1,7 @@
 import pytest
 
-from skymarket.ads.serializers import CommentSerializer
-from skymarket.factories import CommentFactory
+from ads.serializers import CommentSerializer
+from factories import CommentFactory
 
 
 @pytest.mark.django_db

@@ -1,6 +1,6 @@
 import pytest
 
-from skymarket.factories import CommentFactory
+from factories import CommentFactory
 
 
 @pytest.mark.django_db

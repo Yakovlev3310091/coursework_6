@@ -1,6 +1,6 @@
 import pytest
 
-from skymarket.ads.models import Ad
+from ads.models import Ad
 
 
 @pytest.mark.django_db

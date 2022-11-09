@@ -1,7 +1,7 @@
 import pytest
 
-from skymarket.ads.serializers import AdListSerializer
-from skymarket.factories import AdFactory
+from ads.serializers import AdListSerializer
+from factories import AdFactory
 
 
 @pytest.mark.django_db

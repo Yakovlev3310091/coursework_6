@@ -3,7 +3,7 @@ from pytest_factoryboy import register
 from rest_framework.test import APIClient
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from skymarket.factories import UserFactory, AdFactory, CommentFactory
+from factories import UserFactory, AdFactory, CommentFactory
 from users.models import User
 
 register(UserFactory)

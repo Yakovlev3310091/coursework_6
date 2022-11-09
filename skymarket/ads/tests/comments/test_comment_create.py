@@ -1,6 +1,5 @@
 import pytest
 
-
 @pytest.mark.django_db
 def test_create_comment(user_client, ad, user_api):
     data = {
@@ -14,7 +13,10 @@ def test_create_comment(user_client, ad, user_api):
         "text": "test text",
         "author_id": user_api.pk,
         "created_at": response.data.get("created_at"),
-        "ad_id": ad.pk
+        "author_first_name": "test name",
+        'author_last_name': 'test last_name',
+        "ad_id": ad.pk,
+        'author_image': None
     }
 
     assert response.status_code == 201
